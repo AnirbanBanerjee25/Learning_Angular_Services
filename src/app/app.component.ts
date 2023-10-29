@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsersService } from './services/users.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'learning_project';
+
+  users:any
+  constructor(private uService:UsersService){
+    console.log(uService.users())
+    this.users=uService.users()
+  }
+  
 }
